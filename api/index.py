@@ -3,7 +3,7 @@ import subprocess
 
 def handler(request):
     try:
-        result = subprocess.run(['python', 'main.py'], capture_output=True, text=True)
+        result = subprocess.run(['python', 'api/main.py'], capture_output=True, text=True)
         return {
             "statusCode": 200,
             "headers": {"Content-Type": "application/json"},
