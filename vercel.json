@@ -10,9 +10,5 @@
       "src": "/api/.*",
       "dest": "/api/index.py"
     }
-  ],
-  "builds": [
-    { "src": "api/index.py", "use": "@vercel/python" },
-    { "src": "src/**/*", "use": "@vercel/static" }
   ]
 }
