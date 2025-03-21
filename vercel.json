@@ -1,7 +1,11 @@
 {
+  "version": 2,
   "functions": {
-    "api/run-script.py": {
-      "runtime": "python3.9"
+    "api/index.py": {
+      "runtime": "@vercel/python"
     }
-  }
-} 
+  },
+  "routes": [
+    { "src": "/api/run-script", "dest": "/api/index.py" }
+  ]
+}
