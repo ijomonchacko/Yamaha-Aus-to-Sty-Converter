@@ -1,0 +1,239 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.animate-grid {
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(to right, rgba(212, 175, 55, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(212, 175, 55, 0.07) 1px, transparent 1px);
+  animation: grid 20s linear infinite;
+}
+
+.animate-glow {
+  animation: glow 4s ease-in-out infinite;
+}
+
+.gold-gradient {
+  background: linear-gradient(
+    135deg,
+    rgba(212, 175, 55, 0.1) 0%,
+    rgba(218, 165, 32, 0.15) 25%,
+    rgba(212, 175, 55, 0.2) 50%,
+    rgba(184, 134, 11, 0.15) 75%,
+    rgba(212, 175, 55, 0.1) 100%
+  );
+}
+
+.text-gold-gradient {
+  background: linear-gradient(to right, #b8860b, #d4af37, #b8860b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+}
+
+@keyframes grid {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(50px);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+.bg-dots {
+  background-image: radial-gradient(rgba(212, 175, 55, 0.07) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.pale-gold-glow {
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.1);
+}
+
+.hover-gold-glow:hover {
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
+}
+
+.rich-gold-border {
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  box-shadow: inset 0 0 15px rgba(212, 175, 55, 0.05);
+}
+
+.gold-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.gold-shine::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 45%,
+    rgba(212, 175, 55, 0.05) 48%,
+    rgba(212, 175, 55, 0.1) 50%,
+    rgba(212, 175, 55, 0.05) 52%,
+    transparent 55%
+  );
+  transform: rotate(45deg);
+  animation: shine 6s linear infinite;
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(100%) rotate(45deg);
+  }
+}
+
+.lightning {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.lightning::before,
+.lightning::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at center,
+    transparent 0%,
+    rgba(212, 175, 55, 0.05) 25%,
+    transparent 50%
+  );
+  animation: lightning 7s infinite;
+}
+
+.lightning::after {
+  animation-delay: -3.5s;
+}
+
+.lightning-intense {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 120%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.lightning-intense::before,
+.lightning-intense::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at center,
+    rgba(212, 175, 55, 0.2) 0%,
+    rgba(212, 175, 55, 0.1) 15%,
+    transparent 40%
+  );
+  animation: lightning-intense 5s infinite;
+}
+
+.lightning-intense::after {
+  animation-delay: -2.5s;
+}
+
+@keyframes lightning {
+  0%, 100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  10%, 90% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.3;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+  21% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.3;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  31% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.3;
+    transform: translate(-50%, -50%) scale(1.3);
+  }
+  41% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.3;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  51% {
+    opacity: 0;
+  }
+}
+
+@keyframes lightning-intense {
+  0%, 100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9) rotate(0deg);
+  }
+  10%, 90% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.4;
+    transform: translate(-50%, -50%) scale(1.1) rotate(5deg);
+  }
+  21% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.4;
+    transform: translate(-50%, -50%) scale(1.2) rotate(-5deg);
+  }
+  31% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.4;
+    transform: translate(-50%, -50%) scale(1.1) rotate(3deg);
+  }
+  41% {
+    opacity: 0;
+  }
+}
