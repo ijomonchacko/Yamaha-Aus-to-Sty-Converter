@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "api/run-script.py": {
+      "runtime": "python3.9"
+    }
+  }
+} 
