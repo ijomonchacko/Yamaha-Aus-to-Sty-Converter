@@ -1,7 +1,30 @@
-   {
-     "functions": {
-       "api/run-script.py": {
-         "runtime": "vercel-python@0.5.0"
-       }
-     }
-   }
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "main.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "server.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "dist" }
+    }
+  ],
+  "routes": [
+    { "src": "/api/main", "dest": "/main.py" },
+    { "src": "/api/server", "dest": "/server.py" }
+  ],
+  "functions": {
+    "main.py": {
+      "runtime": "@vercel/[email protected]"
+    },
+    "server.py": {
+      "runtime": "@vercel/[email protected]"
+    }
+  }
+}
