@@ -6,7 +6,7 @@ function App() {
 
   const handleTryNow = async () => {
     try {
-      const response = await fetch('https://austosty.vercel.app/api/run-script');
+      const response = await fetch('https://austosty.up.railway.app/api/run-script');
       const data = await response.json();
       setOutput(data.output || data.error);
     } catch (error) {
