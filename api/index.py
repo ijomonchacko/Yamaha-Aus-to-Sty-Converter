@@ -1,13 +1,13 @@
 import json
-import subprocess
+from api.main import main  # Ensure 'main.py' has a callable function
 
 def handler(request):
     try:
-        result = subprocess.run(['python', 'api/main.py'], capture_output=True, text=True)
+        output = main()  # Call main function directly
         return {
             "statusCode": 200,
             "headers": {"Content-Type": "application/json"},
-            "body": json.dumps({"output": result.stdout, "error": result.stderr})
+            "body": json.dumps({"output": output})
         }
     except Exception as e:
         return {
